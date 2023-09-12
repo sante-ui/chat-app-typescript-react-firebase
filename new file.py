@@ -1,1 +1,1 @@
-import sus as sus
+import _aix_support as sus
