@@ -1,0 +1,94 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.chat {
+    width: 70%;
+    min-width: 25rem;
+    background-color: #141423;
+}
+
+.chat-info {
+    height: 50px;
+    padding: 10px 1rem;
+    background-color: #47497e;
+}
+
+.messages {
+    font-weight: 400;
+    height: calc(100% - 110px);
+    background: #141423;
+    overflow-y: scroll;
+
+    .message {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 15px;
+
+        .message-info {
+            display: flex;
+            flex-direction: column;
+            color: lightgrey;
+            font-size: 0.8rem;
+            font-weight: 200;
+            img {
+                width: 40px;
+                height: 40px;
+                object-fit: cover;
+            }
+        }
+        .message-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 80%;
+            p {
+                background-color: #262644;
+                margin-top: 2px;
+                padding: 0.5rem 1rem;
+                border-radius: 0 10px 10px 10px;
+            }
+            img{
+                width: 50%;
+            }
+        }
+        &.owner {
+            flex-direction: row-reverse;
+            .message-content {
+                align-items: flex-end;
+            }
+             p {
+                background-color: #464664;
+                padding: 0.5rem 1rem;
+                border-radius: 10px 0 10px 10px;
+                max-width: max-content;
+            }
+        }
+    }
+}
+
+.input {
+    background-color: #3d3e69;
+    height: 60px;
+    padding: 10px;
+}
+
+.chat-icon {
+    width: 2rem; 
+    height: 30px;
+}
+
+.send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    img {
+        cursor: pointer;
+    }
+    .button {
+        background: #2e2e61;
+        border: solid 2px #c5c5e3;
+        &:hover {
+            background: #3a3a79;
+        }
+    }
+}

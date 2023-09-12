@@ -1,34 +1,35 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container, Col, Button, Modal } from 'react-bootstrap';
 import '../public/css/style.css';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
+import { ModalSettings } from './modal-settings'
+
+
 // import { auth } from '../config/firebase';
 // import { signOut } from 'firebase/auth';
 // import { useAuthState } from 'react-firebase-hooks/auth';
 
 export const Navbar = () => {
+    const [show, setShow] = useState(false);
 
     return (
-        <div className='bg-primary m-0 p-0 g-0'>
-
-            <Container className='d-flex bg-primary text-white fw-bold p-3 m-0 mx-auto' style={{ maxWidth: '95.75rem' }}>
-                
-                <Col className='d-flex justify-content-start align-items-center ms-3 gap-5'>
-                    <Link className='text-decoration-none pb-1 text-white' to='/'> Home </Link>
-                    <Link className='text-decoration-none pb-1 text-white' to='/login'> Login </Link>
-                    <Link className='text-decoration-none pb-1 text-white' to='/register'> Register </Link>
-                </Col>
-
-                
-                <Col className='d-flex justify-content-end align-items-center me-3 py-0 my-0 g-0'>
-                    <p className='text-primary me-3 pb-1 py-0 my-0'> {} </p>
-                    <img className='rounded m-0 p-0' style={{ cursor: 'pointer' }}  width='30' height='30' />
-                    {/* <Button className='bg-daek text-white fw-bold' > Log Out </Button> */}
-
-                </Col>
-               
+        <div className='d-flex align-items-center flex-row navbar text-white  m-0 g-0'>
             
-            </Container>
+            <Col  className='d-flex justify-content-start gap-4 p-0 m-0 g-0'>
+                <Link className='text-decoration-none fs-6 text-white m-0 p-0 g-0' to='/login'> Login </Link>
+                <Link className='text-decoration-none fs-6 text-white m-0 p-0 g-0' to='/register'> Register </Link>
+            </Col>
+
+            
+            <Col  className='d-flex justify-content-end py-0 my-0 g-0'>
+                <p className='text-primary me-3 p-0 m-0'> {} </p>
+                <img className='rounded-circle m-0 p-0 g-0' style={{ cursor: 'pointer' }}  width='30' height='30' onClick={() => setShow(true)} />
+                <ModalSettings show={show} onHide={() => setShow(false)} />
+            </Col>
+            
+        
         </div>
+        
     );
 };

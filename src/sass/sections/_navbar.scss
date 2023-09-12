@@ -1,24 +1,14 @@
 @use '../custom' as *;
 @use '../components/mixins' as *;
 
-.menu {
-    @include gradient;
-
-
-    li {
-      padding: 0 0.7rem;
-
-      a {
-        color: $white;
-        padding: 0 0.7rem;
-        text-transform: capitalize;
-        font-weight: 600;      
-
-      }
-      &:hover {
-        color: $white;
-      }
-  
-    }
+.navbar {
+    background-color: #47497e;
+    height: 50px;
+    min-height: 30.5469px;
     
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    box-sizing: border-box;
 }

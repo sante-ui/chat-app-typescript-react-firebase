@@ -1,0 +1,12 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.sidebar {
+    width: 30%;
+    min-width: 20rem;
+    background-color: #19192a;
+    border-right: solid 0.1rem #71718e;
+    position: relative;
+}
+
+

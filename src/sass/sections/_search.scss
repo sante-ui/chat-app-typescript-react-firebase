@@ -1,0 +1,48 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.search-input{
+    position: relative;
+}
+
+.icon-input {
+    position: absolute;
+    top: 50%;
+    left: 1.2rem; 
+    transform: translateY(-50%);
+    z-index: 1;
+    color: rgb(4, 3, 25);
+    outline: none;
+  }
+
+  .search-input-container {
+    position: relative;
+    display: inline-block; /* Display as inline-block to wrap around the content */
+    
+  }
+
+  .user-chat {
+    cursor: pointer;
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    &:hover {
+      background-color: #151524;
+    }
+  }
+
+  .user-info-chat {
+    img {
+      width: 40px;
+      height: 40px;
+      object-fit: cover;
+    }
+    span {
+      font-size: 1rem; font-weight: 700; margin: 0; padding: 0; 
+    }
+    p {
+      font-size: 0.8rem; color: rgb(200, 200, 200); margin: 0; padding: 0;
+    }
+  }

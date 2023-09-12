@@ -1,0 +1,33 @@
+@use '../custom' as *;
+@use '../components/mixins' as *;
+
+.user-setting {
+    width: 30%;
+    min-width: 20rem;
+    margin: 0;
+    height: 100%;
+    background: #19192a;
+    position: relative;
+    left: 0;
+    top: 0;
+    .modal-header {
+      height: 50px;
+    }
+  }
+
+  @keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  .slide-in-from-left {
+    animation: slideInFromLeft 0.4s cubic-bezier(.17,.82,.45,1.01);
+  }
+
+  .icon-color {
+    color: white;
+  }
